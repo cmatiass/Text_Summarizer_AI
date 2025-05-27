@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Text Summarizer - Intelligent Text Summarization</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <h1>AI Text Summarizer</h1>
+                </div>
+                <p class="tagline">Transform lengthy texts into concise, intelligent summaries</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Text Input Section -->
+            <section class="input-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-edit"></i> Enter Your Text</h2>
+                        <p>Paste or type the text you want to summarize</p>
+                    </div>
+                    <div class="card-body">
+                        <textarea 
+                            id="inputText" 
+                            placeholder="Enter your text here... (minimum 50 characters for best results)"
+                            rows="8"
+                        ></textarea>
+                        <div class="input-actions">
+                            <div class="char-count">
+                                <span id="charCount">0</span> characters
+                            </div>
+                            <button id="summarizeBtn" class="btn-primary">
+                                <i class="fas fa-magic"></i>
+                                Generate Summary
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Summary Output Section -->
+            <section class="output-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-compress-alt"></i> Summary</h2>
+                        <p>Your intelligent text summary will appear here</p>
+                    </div>
+                    <div class="card-body">
+                        <div id="summaryOutput" class="summary-output">
+                            <div class="placeholder">
+                                <i class="fas fa-robot"></i>
+                                <p>No summary generated yet. Enter some text above and click "Generate Summary" to get started.</p>
+                            </div>
+                        </div>
+                        <div id="summaryActions" class="summary-actions" style="display: none;">
+                            <button id="copyBtn" class="btn-secondary">
+                                <i class="fas fa-copy"></i>
+                                Copy Summary
+                            </button>
+                            <div class="summary-stats">
+                                <span id="compressionRatio"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Loading Indicator -->
+            <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+                <div class="spinner"></div>
+                <p>Generating your summary...</p>
+            </div>
+        </main>
+
+        <!-- Project Information Section -->
+        <section class="project-info">
+            <div class="info-container">
+                <h2><i class="fas fa-info-circle"></i> About This Project</h2>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Technology Stack</h3>
+                        <p>Built with <strong>FastAPI</strong> for the backend API, <strong>Hugging Face Transformers</strong> for state-of-the-art NLP models, and modern <strong>HTML/CSS/JavaScript</strong> for an intuitive user interface.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI-Powered Summarization</h3>
+                        <p>Leverages advanced transformer models to understand context and extract key information, providing accurate and coherent summaries that maintain the essence of your original text.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>MLOps Implementation</h3>
+                        <p>Implements industry best practices with modular architecture, automated pipelines for training and prediction, comprehensive logging, and containerized deployment using Docker.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Production Ready</h3>
+                        <p>Features robust error handling, input validation, scalable architecture, and comprehensive testing to ensure reliable performance in production environments.</p>
+                    </div>
+                </div>
+
+                <div class="features-section">
+                    <h3><i class="fas fa-star"></i> Key Features</h3>
+                    <div class="features-list">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Real-time text summarization</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Intelligent content compression</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Context-aware processing</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Professional web interface</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>RESTful API endpoints</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Dockerized deployment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="architecture-section">
+                    <h3><i class="fas fa-sitemap"></i> Project Architecture</h3>
+                    <div class="architecture-flow">
+                        <div class="flow-step">
+                            <div class="step-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h4>Data Ingestion</h4>
+                            <p>Automated data collection and preprocessing pipelines</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="step-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h4>Data Transformation</h4>
+                            <p>Text preprocessing and feature engineering</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="step-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h4>Model Training</h4>
+                            <p>Fine-tuned transformer model training</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="step-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Model Evaluation</h4>
+                            <p>Performance metrics and validation</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="step-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <h4>Prediction Pipeline</h4>
+                            <p>Real-time text summarization service</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2025 AI Text Summarizer. Built with advanced NLP and modern web technologies.</p>
+                <div class="footer-links">
+                    <a href="#" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i> Back to Top</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', path='/js/main.js') }}"></script>
+</body>
+</html>
