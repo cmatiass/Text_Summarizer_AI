@@ -1,0 +1,51 @@
+# Git y control de versiones
+.git
+.gitignore
+.gitattributes
+README.md
+LICENSE
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.env
+
+# Archivos de desarrollo
+template.py
+setup.py
+
+# Notebooks de investigación
+research/
+*.ipynb
+
+# Archivos de logs (se crearán en runtime)
+logs/
+*.log
+
+# Artifacts (se generarán en runtime)
+artifacts/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Archivos temporales
+tmp/
+temp/
+
+# Directorio con DLLs de Windows (no necesario en Linux)
+TextSummarizer/
