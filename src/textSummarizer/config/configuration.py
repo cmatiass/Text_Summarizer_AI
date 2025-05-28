@@ -126,9 +126,10 @@ class ConfigurationManager:
             data_path=config.data_path,         # Path to the raw data to be processed
             tokenizer_name=config.tokenizer_name  # Name/path of the tokenizer to use
         )
-
+        
         return data_transformation_config
-      def get_model_trainer_config(self) -> ModelTrainerConfig:
+    
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
         """
         Create and return configuration object for the model training stage.
         
