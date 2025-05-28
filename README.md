@@ -180,7 +180,7 @@ Text_Summarizer_AI/
    python app.py
    ```
 
-2. **Open your browser** and navigate to `http://localhost:8080`
+2. **Open your browser** and navigate to `http://localhost:8080` or `http://127.0.0.1:8080/`
 
 3. **Enter your text** in the input area and click "Generate Summary"
 
