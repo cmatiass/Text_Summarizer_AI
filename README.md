@@ -13,6 +13,8 @@ Try the application live at: **[https://text-summarizer-ai.onrender.com](https:/
 
 ⚠️ **Note**: The live demo is deployed on a free hosting platform and may experience errors or downtime. For the best experience and full functionality, we recommend running the application locally following the installation instructions below.
 
+![image](https://github.com/user-attachments/assets/fdbfa679-3282-4638-afca-2a9134bf875a)
+
 ## 📋 Table of Contents
 
 - [Overview](#-overview)
