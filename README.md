@@ -7,13 +7,13 @@ An intelligent text summarization application powered by Google's PEGASUS model 
 ![Transformers](https://img.shields.io/badge/🤗%20Transformers-4.20+-orange.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
+![image](https://github.com/user-attachments/assets/3dc576a2-cb41-4b2c-9a86-83c86a392c61)
+
 ## 🌟 Live Demo
 
 Try the application live at: **[https://text-summarizer-ai.onrender.com](https://text-summarizer-ai.onrender.com)**
 
 ⚠️ **Note**: The live demo is deployed on a free hosting platform and may experience errors or downtime. For the best experience and full functionality, we recommend running the application locally following the installation instructions below.
-
-![image](https://github.com/user-attachments/assets/3dc576a2-cb41-4b2c-9a86-83c86a392c61)
 
 
 ## 📋 Table of Contents
